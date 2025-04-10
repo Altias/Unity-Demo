@@ -13,5 +13,11 @@ public class PlayerHurt : MonoBehaviour
 			//You can make anything happen here like taking damage or triggering a loss. For now it just prints to the debug log
 			Debug.Log("Ouch");
 		} 
+		
+		else if (collision.gameObject.CompareTag("Projectile")) 
+		{ 
+			//Ignore collision with our orange.
+			Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+		} 
     }
 }
